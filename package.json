@@ -1,6 +1,6 @@
 {
   "name": "javascript-tracking-user-actions",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Tracking User Actions on Website",
   "main": "index.js",
   "scripts": {
