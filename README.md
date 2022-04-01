@@ -1,5 +1,5 @@
 # javascript-tracking-user-actions
-Tracking User Actions on Website
+Tracking User Actions on Website Page
 
 # Getting started
 
