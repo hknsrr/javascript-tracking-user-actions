@@ -1,8 +1,8 @@
 {
   "name": "javascript-tracking-user-actions",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Tracking User Actions on Website",
-  "main": "index.js",
+  "main": "track.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
