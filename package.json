@@ -1,0 +1,27 @@
+{
+  "name": "javascript-tracking-user-actions",
+  "version": "1.0.1",
+  "description": "Tracking User Actions on Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hknsrr/javascript-tracking-user-actions.git"
+  },
+  "keywords": [
+    "javascript",
+    "tracking",
+    "user",
+    "actions",
+    "events",
+    "website"
+  ],
+  "author": "Hakan SARIER",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hknsrr/javascript-tracking-user-actions/issues"
+  },
+  "homepage": "https://github.com/hknsrr/javascript-tracking-user-actions#readme"
+}
