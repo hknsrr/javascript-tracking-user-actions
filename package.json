@@ -1,7 +1,7 @@
 {
   "name": "javascript-tracking-user-actions",
-  "version": "1.0.4",
-  "description": "Tracking User Actions on Website",
+  "version": "1.0.5",
+  "description": "Tracking User Actions on Website Page",
   "main": "track.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,8 @@
     "user",
     "actions",
     "events",
-    "website"
+    "website",
+    "page"
   ],
   "author": "Hakan SARIER",
   "license": "MIT",
