@@ -14,3 +14,5 @@ npm i javascript-tracking-user-actions
 ```
 import 'javascript-tracking-user-actions';
 ```
+
+3. Open console and inspect.
