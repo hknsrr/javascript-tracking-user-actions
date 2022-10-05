@@ -1,29 +1,19 @@
 export default (function () {
-    
+
+    console.log('Event Tracking Started!');
+
     const activities = [];
     const device = checkDevice();
     const events = ['mousedown', 'keydown', 'scroll', 'touchstart'];
+    var sessionStarted = new Date();
 
     events.forEach(function (event) {
         document.addEventListener(event, debounce(tracking));
     });
 
-    function tracking(event) {
-        // console.log(event);
+    function tracking(e) {
 
-        const activity = {
-            'action': renameEvent(event.type),
-            'target': event.target.nodeName,
-            'id': event.target.id,
-            'class': event.target.className,
-            'value': event.target.value || event.target.outerText,
-            'date': date(),
-            'time': time(),
-            'page': event.target.baseURI,
-            'device': device
-        }
-
-        activities.push(activity);
+        activities.push(getActivityPayload(e));
         console.log(activities);
     }
 
@@ -68,28 +58,37 @@ export default (function () {
         return check ? 'mobile' : 'desktop';
     }
 
-    window.addEventListener('load', (event) => {
-        const activity = {
-            'action': 'pageopen',
-            'page': event.target.baseURI,
-            'date': date(),
-            'time': time(),
-            'device': device
-        }
-        activities.push(activity);
+    window.addEventListener('load', (e) => {
+        
+        activities.push(getActivityPayload(e));
         console.log(activities);
     });
 
-    window.addEventListener('beforeunload', function (event) {
-        const activity = {
-            'action': 'pageleave',
-            'page': event.target.baseURI,
-            'date': date(),
-            'time': time(),
-            'device': device
-        }
-        activities.push(activity);
+    window.addEventListener('beforeunload', function (e) {
+      
+        activities.push(getActivityPayload(e));
         console.log(activities);
     });
 
-})();
+    function getActivityPayload(e) {
+
+        const now = new Date();
+
+        return {
+            event_name: "tracking-event",
+            cust_id: -1,
+            action: renameEvent(e.type),
+            element_target: e.target.nodeName,
+            element_id: e.target.id,
+            element_class: e.target.className,
+            value: e.target.value || e.target.outerText,
+            page: e.target.URL,
+            date: date(),
+            time: time(),
+            device: device,
+            scrollDepth: ((t = document.documentElement), (o = document.body), (n = "scrollTop"), (e = "scrollHeight"), "%" + parseFloat(((t[n] || o[n]) / ((t[e] || o[e]) - t.clientHeight)) * 100).toFixed(1)),
+            isLogin: false,
+            sessionDuration: Math.round((now - sessionStarted) / 1000) + "sec.",
+        }
+    }
+})()
